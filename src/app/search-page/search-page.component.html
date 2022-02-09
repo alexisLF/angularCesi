@@ -1,0 +1,19 @@
+<div class="search-group">
+  <span class="label label-info">Search an image</span>
+  <div class="input-group">
+    <input class="form-control" [(ngModel)]="_imageService.query" id="search" name="search" placeholder="Search images by enter keywords" (keyup.enter)= "searchImages(_imageService.query)">
+    <div class="input-group-append">
+      <button class="btn btn-outline-secondary" type="button" (click)="searchImages(_imageService.query)">Find Images</button>
+    </div>
+      
+  </div>
+  <div *ngIf="isError" class="alert alert-danger" role="alert">
+    An error occured
+  </div>
+</div>
+
+
+<div *ngIf="hasResult">
+  <app-results-page></app-results-page>
+</div>
+

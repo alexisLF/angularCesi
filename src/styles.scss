@@ -1,0 +1,30 @@
+body {
+
+    justify-content: center;
+    background-color: #eee;
+    font-family: 'Fira Mono';
+    margin: auto;
+    font-size: large;
+    
+    h1{
+        text-align: center;
+        font-size: xx-large;
+    }
+
+    .search-group{
+        margin: auto;
+        width: 40%;
+        
+    }
+
+   .empty-results{
+        margin: auto;
+        width: 40%;
+        
+    }
+
+    .infos{
+        margin: 10px;
+    }
+    
+}

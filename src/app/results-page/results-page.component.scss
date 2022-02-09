@@ -1,0 +1,31 @@
+.imagelist{
+
+    width: 50%;
+    
+    img{
+        border: 5px solid #ddd;
+        border-radius: 4px;
+        padding: 5px;
+        margin: 25px;
+        height: 420px;
+        max-width: 100%;
+        display: block;
+        margin-left: auto;
+        margin-right: auto;   
+    }
+    
+    img:hover {
+        box-shadow: 0 0 4px 2px rgba(0, 140, 186, 0.5);
+    }
+    
+}
+#user-image {
+    img{
+        width: 100px;
+        height: 100px;
+    }
+}
+
+.button-ribbon{
+    text-align: center;
+}

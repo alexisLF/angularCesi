@@ -1,0 +1,40 @@
+<div class="row">
+    <div *ngFor="let image of images" class="col-md-6 imagelist" >
+        <ng-container>
+            <img src={{image.webformatURL}} class="image"  (click)="showModal(mymodal)">
+
+            <ng-template #mymodal let-modal>
+                <div class="modal-header">
+                  <button type="button" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')">
+                    <span aria-hidden="true">×</span>
+                  </button>
+                </div>
+                <div class="modal-body">
+                    <div id="user">
+                        <div id="user-image">
+                            <img src="{{image.userImageURL}}" class="image">
+                        </div>
+                        <div id="username">Image published by: {{image.user}}</div>
+                   </div>
+                </div>
+                <div class="modal-footer">
+                    <button class="btn btn-outline-dark" (click)="viewDetails(image)">
+                        Image Details
+                     </button>
+                    <button type="button" class="btn btn-outline-dark" (click)="modal.close('Save click')">
+                        Ok
+                    </button>
+                </div>
+              </ng-template>
+            
+
+        </ng-container>
+    </div>
+    <div *ngIf="isEmpty" class="alert alert-secondary empty-results" role="alert">
+        Bad Luck ! There is no result :'(
+    </div>
+</div>
+<div class="button-ribbon">
+    <button *ngIf="_imageService.page > 1 && !isEmpty" (click)="showPrevious()"> Previous Page</button>
+    <button *ngIf="!isEmpty && !lastPage" (click)="showNext()">Next page</button>
+</div>
